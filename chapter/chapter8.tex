@@ -20,6 +20,31 @@ And from eqn (2.143) (on page 99), $p(m) = \Tr (M_m^\dagger M_m \rho) = \Tr (M_m
 
 
 \Textbf{8.4}
+	We can show that such interaction is unitary
+		\begin{align*}
+			UU^\dagger 
+			&= \left( P_0 \otimes \mathcal{I} + P_1 \otimes X \right)\left( P_0 \otimes \mathcal{I} + P_1 \otimes X \right), \quad (P_0^\dagger = P_0,\ P_1^\dagger = P_1,\ X^\dagger = X)\\
+			&= P_0^2 \otimes \mathcal{I} + P_0 P_1 \otimes X + P_1 P_0 \otimes X + P_1^2 \otimes X^2,\\
+			& P_0^2 = P_0,\ P_1^2 = P_1,\ P_0 P_1 = P_1 P_0 = 0,\ X^2 = \mathcal{I}\\
+			UU^\dagger &= P_0 \otimes \mathcal{I} + P_1 \otimes \mathcal{I} = \mathcal{I}.
+		\end{align*}
+	Hence the quantum operation for this process is
+		\begin{align*}
+			\mathcal{E}(\rho_{sys}) 
+			&= \trace_{env}\left[ \left( P_0^{sys} \otimes \mathcal{I}^{env} + P_1^{sys} \otimes X^{env} \right) \rho_{sys} \otimes \kb{0_{env}} \left( P_0^{sys} \otimes \mathcal{I}^{env} + P_1^{sys} \otimes X^{env} \right) \right]. \\
+			&= \trace_{env}\left[ \left( P_0^{sys}\rho_{sys} \otimes \kb{0_{env}} + P_1^{sys}\rho_{sys} \otimes \ket{1_{env}}\bra{0_{env}} \right)   \left( P_0^{sys} \otimes \mathcal{I}^{env} + P_1^{sys} \otimes X^{env} \right) \right]. \\
+			&= \trace_{env}\Big[ P_0^{sys}\rho_{sys}P_0^{sys} \otimes \kb{0_{env}} + P_0^{sys}\rho_{sys}P_1^{sys} \otimes \ket{0_{env}}\bra{1_{env}} +\\
+			&+  P_1^{sys}\rho_{sys}P_0^{sys} \otimes \ket{1_{env}}\bra{0_{env}} + P_1^{sys}\rho_{sys}P_1^{sys} \otimes \kb{1_{env}} \Big].
+		\end{align*}
+
+		\begin{align*}
+			\therefore \mathcal{E}(\rho) 
+			&= \bra{0}\Big[ (P_0\rho P_0) \kb{0} + (P_0\rho P_1) \ket{0}\bra{1} +  (P_1\rho P_0) \ket{1}\bra{0} + (P_1\rho P_1) \kb{1} \Big]\ket{0} +\\
+			&+ \bra{1}\Big[ (P_0\rho P_0) \kb{0} + (P_0\rho P_1) \ket{0}\bra{1} +  (P_1\rho P_0) \ket{1}\bra{0} + (P_1\rho P_1) \kb{1} \Big]\ket{1}.\\
+			\mathcal{E}(\rho) &= P_0\rho P_0 + P_1\rho P_1.
+		\end{align*}
+
+
 \Textbf{8.5}
 \Textbf{8.6}
 \Textbf{8.7}
