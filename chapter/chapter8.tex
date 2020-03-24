@@ -1,22 +1,44 @@
 %\setcounter{chapter}{7}
 \chapter{Quantum noise and quantum operations}
+
 \Textbf{8.1}
-Density operator of initial state is written by $\kb{\psi}$ and final state is written by $U\kb{\psi}U^\dagger$.
-Thus time development of $\rho = \kb{\psi}$ can be written by $\mathcal{E}(\rho) = U\rho U^\dagger$.
+	Density operator of initial state is written by $\kb{\psi}$ and final state is written by $U\kb{\psi}U^\dagger$. Thus 
+	time development of $\rho = \kb{\psi}$ can be written by $\mathcal{E}(\rho) = U\rho U^\dagger$.
+
 
 \Textbf{8.2}
-From eqn (2.147) (on page 100),
-\begin{align*}
-	\rho_m = \frac{M_m \rho M_m^\dagger}{\Tr (M_m^\dagger  M_m\rho ) }
-					= \frac{M_m \rho M_m^\dagger}{\Tr ( M_m \rho M_m^\dagger ) }
-					= \frac{\mathcal{E}_m (\rho)}{\Tr \mathcal{E}_m (\rho)}.
-\end{align*}
+	From eqn (2.147) (on page 100),
+	\begin{align*}
+		\rho_m = \frac{M_m \rho M_m^\dagger}{\Tr (M_m^\dagger  M_m\rho ) }
+				= \frac{M_m \rho M_m^\dagger}{\Tr ( M_m \rho M_m^\dagger ) }
+				= \frac{\mathcal{E}_m (\rho)}{\Tr \mathcal{E}_m (\rho)}.
+	\end{align*}
 
-And from eqn (2.143) (on page 99), $p(m) = \Tr (M_m^\dagger M_m \rho) = \Tr (M_m \rho M_m^\dagger) = \Tr \mathcal{E}_m (\rho)$.
+	And from eqn (2.143) (on page 99), $p(m) = \Tr (M_m^\dagger M_m \rho) = \Tr (M_m \rho M_m^\dagger) = \Tr \mathcal{E}_m (\rho)$.
 
 
 \Textbf{8.3}
+	CD's inicial state is $ \rho_{CD} = \ket{0_C}\kbt{0_D}{0_C}\bra{0_D} $, then the total inicial system is $ 
+	\rho_{AB}\otimes\ket{0_C}\kbt{0_D}{0_C}\bra{0_D} $. Therefore the state after the unitary interaction is	
 
+		\begin{align*}
+			\mathcal{E}(\rho) &= \rho' = \rho'_{BC} = \trace_{AD}\left[ U(\rho_{AB} \otimes \ket{0_C}\kbt{0_D}{0_C}\bra{0_D} 
+			)U^\dagger \right]. \\
+			&= \sum_{i,j}\bra{j_A}\bra{j_D}\left[ U(\rho_{AB} \otimes \ket{0_C}\kbt{0_D}{0_C}\bra{0_D} )U^\dagger \right] 
+			\ket{i_A}\ket{i_D}. \\
+			&= \underbrace{\sum_{i,j}}_{k \equiv i,j} \underbrace{\bra{j_A}\bra{j_D} U \ket{0_C}\ket{0_D}}_{\equiv E_k} 
+			\rho_{AB} \underbrace{\bra{0_C}\bra{0_D}U^\dagger\ket{i_A}\ket{i_D}}_{\equiv E_k^\dagger}.\\
+			&= \sum_{k} E_k \rho_{AB} E_k^\dagger.
+		\end{align*} 
+	And so
+		\begin{align*}
+			\sum_{k} E_k^\dagger E_k 
+			&= \sum_{i,j} \bra{0_C}\bra{0_D}U^\dagger\ket{i_A}\ket{i_D} \bra{j_A}\bra{j_D} U \ket{0_C}\ket{0_D}. \\
+			&= \bra{0_C}\bra{0_D}U^\dagger \underbrace{\left[ \sum_{i,j}  \ket{i_A}\ket{i_D} 
+			\bra{j_A}\bra{j_D}\right]}_{=I_{AD}} U \ket{0_C}\ket{0_D}. \\
+			&= \bra{0_C}\bra{0_D} \underbrace{U^\dagger U}_{I} \ket{0_C}\ket{0_D} = \braket{0_C|0_C}\braket{0_D|0_D}\\
+			\sum_{k} E_k^\dagger E_k  &=1.
+		\end{align*}
 
 
 \Textbf{8.4}
